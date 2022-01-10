@@ -1,0 +1,15 @@
+spring:
+  profiles:
+    active: pro
+---
+spring:
+  profiles: dev
+projectAttr: 开发
+---
+spring:
+  profiles: test
+projectAttr: 测试
+---
+spring:
+  profiles: pro
+projectAttr: 生产

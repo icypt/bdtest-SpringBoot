@@ -1,0 +1,13 @@
+#冒号后面一定要加一个空格
+projectAttr: test4
+project:
+  maps:
+    key1: val1
+    key2: val2
+    key3: val3
+  lists:
+    - val1
+    - val2
+    - val3
+projectName: test
+projectNameVal: ${projectName}
