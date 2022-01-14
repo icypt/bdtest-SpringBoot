@@ -32,6 +32,10 @@
 
 		<!--<dependency>-->
 			<!--<groupId>org.springframework.boot</groupId>-->
+			<!--<artifactId>spring-boot-starter-jdbc</artifactId>-->
+		<!--</dependency>-->
+		<!--<dependency>-->
+			<!--<groupId>org.springframework.boot</groupId>-->
 			<!--<artifactId>spring-boot-configuration-processor</artifactId>-->
 		<!--</dependency>-->
 	</dependencies>
@@ -52,6 +56,9 @@
 		<module>SpringBoot-config-yml</module>
 		<module>SpringBoot-config-more</module>
 		<module>SpringBoot-config-yml-single-more</module>
+		<module>SpringBoot-annotation</module>
+		<module>SpringBoot-config-more-war</module>
+		<module>SpringBoot-call-static</module>
 	</modules>
 
 </project>

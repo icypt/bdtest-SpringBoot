@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>文件上传</title>
+</head>
+<body>
+    <form action="upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="file"/><br/>
+        <input type="submit" value="开始上传"/>
+    </form>
+    <h3>上传图片回显</h3>
+    <div>
+        <img th:src="${viewPath}">
+    </div>
+</body>
+</html>
