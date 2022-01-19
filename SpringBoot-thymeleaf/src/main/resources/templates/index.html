@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h3>SpringBoot Thymeleaf index page</h3>
+    <h3>表单标签</h3>
+    <input th:id="testId" th:name="testName" th:value="测试" th:class="test-class" th:placeholder="请输入XXXXX"/>
+    <h3>文本标签</h3>
+    <div th:text="${testMsg}">测试测试</div>
+    <h3>if标签使用</h3>
+    <div th:if="${testFlag == '1'}">testFlag等于1</div>
+    <div th:if="${testFlag != '1'}">testFlag不等于1</div>
+    <h3>each标签使用</h3>
+    <table cellpadding="0" cellspacing="0" border="1">
+        <tr>
+            <td>用户ID</td>
+            <td>用户名称</td>
+            <td>其他</td>
+        </tr>
+        <tr th:each="user : ${userList}">
+            <td th:text="${user.userId}"></td>
+            <td th:text="${user.userName}"></td>
+            <td>
+               索引值：<span th:text="${userStat.index}"></span><br/>
+               实际行数：<span th:text="${userStat.count}"></span><br/>
+               当前变量：<span th:text="${userStat.current}"></span><br/>
+                是否为第一个列表元素：<span th:text="${userStat.first}"></span><br/>
+                是否为最后一个列表元素：<span th:text="${userStat.last}"></span><br/>
+                是否偶数：<span th:text="${userStat.even}"></span><br/>
+                是否奇数：<span th:text="${userStat.odd}"></span><br/>
+                元素总数：<span th:text="${userStat.size}"></span><br/>
+            </td>
+        </tr>
+    </table>
+</body>
+<script>
+    var  testArray =[
+        [1,2,3],[1,2,3]
+    ]
+    var testVal="[[${testMsg}]]";
+    alert(testVal);
+    alert(testArray[0][0]);
+</script>
+</html>

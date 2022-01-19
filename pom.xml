@@ -59,6 +59,9 @@
 		<module>SpringBoot-annotation</module>
 		<module>SpringBoot-config-more-war</module>
 		<module>SpringBoot-call-static</module>
+		<module>SpringBoot-logback</module>
+		<module>SpringBoot-thymeleaf</module>
+		<module>SpringBoot-spring-security</module>
 	</modules>
 
 </project>
