@@ -6,6 +6,7 @@ import com.bdtest.learn.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -63,4 +64,27 @@ public class TestController {
     public String toIndex() {
         return "index";
     }
+
+    /**
+     * 测试方法层级根据角色控制访问权限
+     * @return
+     */
+    @PreAuthorize("hasRole('03')")
+    @GetMapping("/testRole")
+    @ResponseBody
+    public String testRole() {
+        return "ok";
+    }
+
+    /**
+     * 测试方法层级根据权限标识控制访问权限
+     * @return
+     */
+    @PreAuthorize("hasAnyAuthority('per_insert', 'per_update')")
+    @GetMapping("/testPer")
+    @ResponseBody
+    public String testPer() {
+        return "ok";
+    }
+
 }

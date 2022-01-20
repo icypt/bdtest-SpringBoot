@@ -5,8 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Repository;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Repository
@@ -30,5 +29,21 @@ public class UserDao {
                 filter(userEntity -> userEntity.getUserName().equalsIgnoreCase(userName)).
                 collect(Collectors.toList());
         return userEntityList.size() > 0 ? userEntityList.get(0) : null;
+    }
+
+    public List<String> findRolesByUserId(Long userId) {
+        Map<Long, List<String>> userRoles = new HashMap<>();
+        userRoles.put((long)1, Arrays.asList("ROLE_01", "ROLE_02", "ROLE_03"));
+        userRoles.put((long)2, Arrays.asList("ROLE_01", "ROLE_02"));
+        userRoles.put((long)3, Arrays.asList("ROLE_01"));
+        return userRoles.get(userId);
+    }
+
+    public List<String> findPersByUserId(Long userId) {
+        Map<Long, List<String>> userPers = new HashMap<>();
+        userPers.put((long)1, Arrays.asList("per_insert", "per_update", "per_delete", "per_query"));
+        userPers.put((long)2, Arrays.asList("per_insert", "per_update"));
+        userPers.put((long)3, Arrays.asList("per_query"));
+        return userPers.get(userId);
     }
 }

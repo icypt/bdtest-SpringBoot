@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -7,6 +7,23 @@
 <body>
     <a href="loginOut">点击我注销</a>
     <h3>SpringBoot SpringSecurity index page, welcome <span th:text="${session.userInfo.userName}"></span> ！！！</h3>
+    <div sec:authorize="hasAuthority('per_insert')">新增操作</div>
+    <div sec:authorize="hasAuthority('per_update')">修改操作</div>
+    <div sec:authorize="hasAuthority('per_delete')">删除操作</div>
+    <div sec:authorize="hasAnyAuthority('per_query', 'per_insert')">查询操作</div>
+
+    <div sec:authorize="hasAnyRole('01', '02')">
+        页面区域一：角色1，角色2
+    </div>
+
+    <div sec:authorize="hasRole('01')">
+        页面区域二：角色1
+    </div>
+    <div sec:authorize="hasAnyRole('02', '03')">
+        页面区域三： 角色2，角色3
+    </div>
+
+
 </body>
 
 </html>
