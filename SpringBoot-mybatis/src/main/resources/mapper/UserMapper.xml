@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bdtest.learn.mapper.UserMapper">
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.bdtest.learn.entity.UserEntity">
+        <id column="user_id" property="userId" />
+        <result column="user_name" property="userName" />
+        <result column="password" property="password" />
+    </resultMap>
+
+    <insert id="insert" useGeneratedKeys="true" keyColumn="user_id" keyProperty="userId">
+        insert into t_user(user_id,user_name,password) values(#{userId},#{userName},#{password})
+    </insert>
+
+    <insert id="batchInsert" parameterType="list">
+        insert into t_user(user_id, user_name, password) values
+        <foreach collection="userList" item="user"  separator=",">
+            (#{user.userId},#{user.userName},#{user.password})
+        </foreach>
+    </insert>
+
+    <select id="findAllUsers" resultMap="BaseResultMap" parameterType="map">
+        <!--  select * from t_user t where t.user_id = #{conditions.userId}-->
+        <!-- select * from t_user t where t.user_id = ${conditions.userId}-->
+        select * from t_user t where t.user_name like concat('%',#{conditions.userName}, '%')
+          </select>
+    <select id="findUserByUserName" resultMap="BaseResultMap" parameterType="map">
+        select * from t_user t where t.user_name = #{userName}
+    </select>
+
+      </mapper>

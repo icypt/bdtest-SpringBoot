@@ -7,7 +7,6 @@
 		<artifactId>bdtest-SpringBoot</artifactId>
 		<version>1.0.0</version>
 	</parent>
-	<groupId>com.bdtest.learn</groupId>
 	<artifactId>SpringBoot-config-more-war</artifactId>
 	<name>SpringBoot-config-more-war</name>
 	<description>SpringBoot 打war包学习</description>

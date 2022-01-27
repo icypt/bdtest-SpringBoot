@@ -7,13 +7,29 @@
 		<artifactId>bdtest-SpringBoot</artifactId>
 		<version>1.0.0</version>
 	</parent>
-	<artifactId>SpringBoot-spring-security</artifactId>
-	<name>SpringBoot-spring-security</name>
-	<description>SpringBoot-spring-security 安全组件学习</description>
+	<artifactId>SpringBoot-mybatis</artifactId>
+	<name>SpringBoot-mybatis</name>
+	<description>mybatis 持久层组件学习</description>
+
+	<properties>
+		<mybatis.version>2.1.1</mybatis.version>
+	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.mybatis.spring.boot</groupId>
+			<artifactId>mybatis-spring-boot-starter</artifactId>
+			<version>${mybatis.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
 		</dependency>
 
 		<dependency>

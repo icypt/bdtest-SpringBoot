@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" >
+    <title>登录页面</title>
+</head>
+<body>
+    用户名：<input id="userName" name="userName" placeholder="请输入您的用户名"/>
+    密码：<input type="password" id="password" name="password" placeholder="请输入您的密码"/>
+    <input type="button" value="登录" onclick="submit()"/>
+</body>
+<script type="text/javascript" src="/static/js/jquery-3.6.0.min.js"></script>
+<script>
+    function submit() {
+        var token = '[[${_csrf.token}]]';
+        var userName = $("#userName").val();
+        if(!userName) {
+            alert("请输入您的用户名");
+            return false;
+        }
+        var password = $("#password").val();
+        if(!password) {
+            alert("请输入您的用户名");
+            return false;
+        }
+        $.ajax({
+            type: "post",
+            url:"login",
+            data: {
+                userName: userName,
+                password: password,
+                _csrf:token
+            },
+            dataType: "json",
+            success: function (data) {
+                console.log(JSON.stringify(data));
+                if(data.code === "000") {
+                    location.href="toIndex";
+                } else {
+                    alert(data.msg);
+                }
+            },
+            error: function (msg) {
+                console.log(JSON.stringify(msg));
+            }
+        })
+    }
+</script>
+</html>

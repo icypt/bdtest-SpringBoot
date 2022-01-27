@@ -7,13 +7,25 @@
 		<artifactId>bdtest-SpringBoot</artifactId>
 		<version>1.0.0</version>
 	</parent>
+	<artifactId>SpringBoot-redis</artifactId>
+	<name>SpringBoot-redis</name>
+	<description>SpringBoot 中redis的整合及使用</description>
 
-	<artifactId>SpringBoot-HelloWorld</artifactId>
-	<name>SpringBoot-HelloWorld</name>
-	<description>SpringBoot 第一个项目</description>
+	<properties>
+		<mybatis.version>2.1.1</mybatis.version>
+	</properties>
 
 	<dependencies>
+		<dependency>
+			<groupId>org.mybatis.spring.boot</groupId>
+			<artifactId>mybatis-spring-boot-starter</artifactId>
+			<version>${mybatis.version}</version>
+		</dependency>
 
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+		</dependency>
 	</dependencies>
 
 	<build>

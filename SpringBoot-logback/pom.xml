@@ -7,12 +7,11 @@
 		<artifactId>bdtest-SpringBoot</artifactId>
 		<version>1.0.0</version>
 	</parent>
-	<groupId>com.bdtest.learn</groupId>
 	<artifactId>SpringBoot-logback</artifactId>
 	<name>SpringBoot-logback</name>
 	<description>SpringBoot logback 日志组件学习</description>
 	<dependencies>
-		
+
 	</dependencies>
 
 	<build>

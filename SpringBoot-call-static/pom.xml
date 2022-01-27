@@ -7,12 +7,11 @@
 		<artifactId>bdtest-SpringBoot</artifactId>
 		<version>1.0.0</version>
 	</parent>
-	<groupId>com.bdtest.learn</groupId>
 	<artifactId>SpringBoot-call-static</artifactId>
 	<name>SpringBoot-call-static</name>
 	<description>SpringBoot 自定义静态资源访问路径及存储路径</description>
 	<dependencies>
-		
+
 	</dependencies>
 
 	<build>
